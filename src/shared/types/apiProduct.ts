@@ -1,0 +1,9 @@
+export interface ApiProduct {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  category: string;
+  description: string;
+  // Add other fields as needed from the API
+}

@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FilterSidebar from './FilterSidebar';
 
 const Header = () => {
@@ -8,6 +8,17 @@ const Header = () => {
   const toggleFilters = () => {
     setShowFilters((prev) => !prev);
   };
+
+  useEffect(() => {
+    const sidebar = document.querySelector('.filter-sidebar') as HTMLElement | null;
+    if (sidebar) {
+      if (showFilters) {
+        sidebar.classList.add('show');
+      } else {
+        sidebar.classList.remove('show');
+      }
+    }
+  }, [showFilters]);
 
   return (
     <header className="header">

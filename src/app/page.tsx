@@ -1,13 +1,22 @@
 import Navbar from '@/features/home/components/Navbar';
 import Header from '@/features/home/components/Header';
+import ProductCard from '@/features/home/components/ProductCard';
+import { Product } from '@/shared/types/product'; 
+import { fetchProducts } from '@/shared/utils/api';
 
-export default function Home() {
+export default async function Home() {
+  const products: Product[] = await fetchProducts(); 
+
   return (
     <div>
       <Navbar />
       <Header />
-      <main>
-        <h1>Welcome to Our Store</h1>
+      <main className="main-content">
+        <div className="products-grid">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </main>
     </div>
   );
