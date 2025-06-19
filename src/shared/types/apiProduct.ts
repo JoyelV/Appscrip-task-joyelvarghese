@@ -5,5 +5,4 @@ export interface ApiProduct {
   image: string;
   category: string;
   description: string;
-  // Add other fields as needed from the API
 }
