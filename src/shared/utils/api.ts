@@ -9,6 +9,6 @@ export const fetchProducts = async (): Promise<Product[]> => {
     title: item.title,
     price: item.price,
     image: item.image,
-    inStock: Math.random() > 0.3, // Randomly set inStock for demo
+    inStock: Math.random() > 0.3, 
   }));
 };
