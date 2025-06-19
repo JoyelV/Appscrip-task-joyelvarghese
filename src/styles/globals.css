@@ -228,8 +228,52 @@
   margin: 0 auto;
 }
 
+.recommendation {
+  width: 20%;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-left: 1px solid #ddd;
+}
+
+.recommendation-title {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.recommendation-grid {
+  display: grid;
+  gap: 1rem;
+}
+
 @media (max-width: 768px) {
+  .filter-sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .filter-sidebar.show {
+    transform: translateX(0);
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
   .product-card {
+    width: 100%;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .recommendation {
     width: 100%;
   }
 }
