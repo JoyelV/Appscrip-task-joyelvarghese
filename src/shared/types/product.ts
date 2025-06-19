@@ -7,3 +7,14 @@ export interface Product {
   isOnSale?: boolean; 
   isCustomizable?: boolean; 
 }
+
+export interface ApiProduct {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  category: string;
+  description: string;
+}
+
+
