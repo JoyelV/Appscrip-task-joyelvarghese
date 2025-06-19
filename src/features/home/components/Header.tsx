@@ -1,8 +1,7 @@
-"use client"
 import { useState, useEffect } from 'react';
 import FilterSidebar from './FilterSidebar';
 
-const Header = () => {
+const Header = ({ onFilterChange }: { onFilterChange: (filters: { [key: string]: boolean }) => void }) => {
   const [showFilters, setShowFilters] = useState(false);
 
   const toggleFilters = () => {
@@ -27,7 +26,7 @@ const Header = () => {
       <button onClick={toggleFilters} className="filter-toggle">
         {showFilters ? 'Hide Filters' : 'Show Filters'}
       </button>
-      <FilterSidebar show={showFilters} onToggle={toggleFilters} />
+      <FilterSidebar show={showFilters} onToggle={toggleFilters} onFilterChange={onFilterChange} />
     </header>
   );
 };
