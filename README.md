@@ -113,9 +113,9 @@ e-commerce-product-listing/
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as per the terms.
 
 ## Contact
-- **Author**: [Your Name]
-- **Email**: your.email@example.com
-- **GitHub**: [https://github.com/your-username](https://github.com/your-username)
+- **Author**: Joyel Varghese
+- **Email**: Varghesejoyel71@gmail.com
+- **GitHub**: [https://github.com/JoyelV](https://github.com/JoyelV)
 - For issues or suggestions, please open an issue on the GitHub repository.
 
 ```
