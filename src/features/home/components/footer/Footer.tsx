@@ -29,7 +29,7 @@ const Footer = () => {
               <p className="footer-heading">CURRENCY</p>
             </div>
             <div className="footer-info" style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-              <Image src="/images/us-flag-img.png" alt="US Flag" width={16} height={16} />
+              <Image src="/images/us-flag-icon.png" alt="US Flag" width={16} height={16} />
               <b>+ USD</b>
             </div>
             <p style={{ fontSize: '12px' }} className="hidden">
@@ -43,7 +43,7 @@ const Footer = () => {
         <section className="footer-bottom-section oter-company-info">
           <div className="footer-heading-section">
             <p className="footer-heading">mettā muse</p>
-            <Image src="/icons/down-arrow-white.png" alt="Arrow Down" width={16} height={16} className="d-block-mobile" />
+            <Image src="/icons/filter-down-arrow-icon.png" alt="Arrow Down" width={16} height={16} className="d-block-mobile" />
           </div>
           <div className="footer-bottom-info d-none-mobile">
             <p className="footer-info">About Us</p>
@@ -57,7 +57,7 @@ const Footer = () => {
         <section className="footer-bottom-section">
           <div className="footer-heading-section">
             <p className="footer-heading">Quick Links</p>
-            <Image src="/icons/down-arrow-white.png" alt="Arrow Down" width={16} height={16} className="d-block-mobile" />
+            <Image src="/icons/filter-down-arrow-icon.png" alt="Arrow Down" width={16} height={16} className="d-block-mobile" />
           </div>
           <div className="footer-bottom-info d-none-mobile">
             <p className="footer-info">Orders & Shipping</p>
@@ -74,7 +74,7 @@ const Footer = () => {
             <div className="footer-heading-section">
               <p className="footer-heading">Follow Us</p>
               <Image
-                src="/icons/down-arrow-white.png"
+                src="/icons/filter-down-arrow-icon.png"
                 alt="Arrow Down"
                 width={20}
                 height={20}
@@ -83,8 +83,8 @@ const Footer = () => {
             </div>
             <div>
               <div className="footer-bottom-info d-none-mobile">
-                <Image src="/icons/insta-logo.png" alt="Instagram Logo" width={24} height={24} />
-                <Image src="/icons/linkedin-logo.png" alt="LinkedIn Logo" width={24} height={24} />
+                <Image src="/icons/insta-icon.png" alt="Instagram Logo" width={24} height={24} />
+                <Image src="/icons/linkedin-icon.png" alt="LinkedIn Logo" width={24} height={24} />
               </div>
             </div>
           </section>
@@ -93,12 +93,12 @@ const Footer = () => {
               <p className="footer-heading">mettā muse Accepts</p>
             </div>
             <div className="payments-info">
-              <Image src="/images/gpay-img.png" alt="G Pay" width={40} height={24} />
-              <Image src="/images/master-card-img.png" alt="Mastercard" width={40} height={24} />
-              <Image src="/images/paypal-img.png" alt="PayPal" width={40} height={24} />
-              <Image src="/images/amex-img.png" alt="Amex" width={40} height={24} />
-              <Image src="/images/apple-pay-img.png" alt="Apple Pay" width={40} height={24} />
-              <Image src="/images/qpay-img.png" alt="Q Pay" width={40} height={24} />
+              <Image src="/images/gpay-payment-icon.png" alt="G Pay" width={40} height={24} />
+              <Image src="/images/master-card-payment-icon.png" alt="Mastercard" width={40} height={24} />
+              <Image src="/images/paypal-payment-icon.png" alt="PayPal" width={40} height={24} />
+              <Image src="/images/amex-payment-icon.png" alt="Amex" width={40} height={24} />
+              <Image src="/images/apple-payment-icon.png" alt="Apple Pay" width={40} height={24} />
+              <Image src="/images/qpay-payment-icon.png" alt="Q Pay" width={40} height={24} />
             </div>
           </section>
         </section>

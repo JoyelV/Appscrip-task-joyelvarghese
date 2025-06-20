@@ -7,15 +7,15 @@ const Header = () => {
       {/* Top Navigation Section */}
       <section id="header-top-section">
         <div className="header-top-item d-none-mobile">
-          <Image src="/icons/nav-top-logo.png" alt="Top Logo" width={16} height={16} />
+          <Image src="/icons/nav-top-icon.png" alt="Top Logo" width={16} height={16} />
           <p>Lorem ipsum dolor</p>
         </div>
         <div className="header-top-item d-none-mobile">
-          <Image src="/icons/nav-top-logo.png" alt="Top Logo" width={16} height={16} />
+          <Image src="/icons/nav-top-icon.png" alt="Top Logo" width={16} height={16} />
           <p>Lorem ipsum dolor</p>
         </div>
         <div className="header-top-item">
-          <Image src="/icons/nav-top-logo.png" alt="Top Logo" width={16} height={16} />
+          <Image src="/icons/nav-top-icon.png" alt="Top Logo" width={16} height={16} />
           <p>Lorem ipsum dolor</p>
         </div>
       </section>
@@ -23,27 +23,27 @@ const Header = () => {
       {/* Middle Navigation Section */}
       <section id="header-body-section">
         <div className="company-logo">
-          <Image src="/icons/company-logo.png" alt="Company Logo" width={36} height={36} />
+          <Image src="/icons/company-icon.png" alt="Company Logo" width={36} height={36} />
         </div>
         <div className="company-title">
           <h1>LOGO</h1>
         </div>
         <div id="header-navigation-icons">
           <div>
-            <Image src="/icons/search-logo.png" alt="Search" width={24} height={24} />
+            <Image src="/icons/search-icon.png" alt="Search" width={24} height={24} />
           </div>
           <div>
-            <Image src="/icons/heart-logo.png" alt="Favorites" width={24} height={24} />
+            <Image src="/icons/heart-icon.png" alt="Favorites" width={24} height={24} />
           </div>
           <div>
-            <Image src="/icons/shopping-bag-logo.png" alt="Shopping Bag" width={24} height={24} />
+            <Image src="/icons/shopping-bag-icon.png" alt="Shopping Bag" width={24} height={24} />
           </div>
           <div className="d-none-mobile">
-            <Image src="/icons/profile-logo.png" alt="Profile" width={24} height={24} />
+            <Image src="/icons/profile-icon.png" alt="Profile" width={24} height={24} />
           </div>
           <div className="d-none-mobile" style={{ display: 'flex', alignItems: 'center' }}>
             <b style={{ marginRight: '6px', fontSize: '16px', letterSpacing: '1px' }}>ENG</b>
-            <Image src="/icons/down-arrow-logo.png" alt="Language Selector" width={16} height={16} />
+            <Image src="/icons/down-arrow-icon.png" alt="Language Selector" width={16} height={16} />
           </div>
         </div>
       </section>
