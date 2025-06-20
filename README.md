@@ -85,13 +85,21 @@ e-commerce-product-listing/
 │   │   │   ├── components/ # Reusable components for home page
 │   │   │   │   ├── header/ # Header-related components
 │   │   │   │   │   └── Header.tsx
+│   │   │   │   │        │   └── styles/
+│   │   │   │   │        │       └── Header.module.css
 │   │   │   │   ├── products/ # Product-related components
 │   │   │   │   │   ├── ProductCard.tsx
 │   │   │   │   │   └── Products.tsx
+│   │   │   │   │        │   └── styles/
+│   │   │   │   │        │       └── Title.module.css
 │   │   │   │   ├── footer/ # Footer-related components
 │   │   │   │   │   └── Footer.tsx
+│   │   │   │   │        │   └── styles/
+│   │   │   │   │        │       └── Products.module.css
 │   │   │   │   └── title/  # Title-related components
 │   │   │   │       └── Title.tsx
+│   │   │   │              └── styles/
+│   │   │   │                 └── Footer.module.css
 │   ├── shared/             # Shared resources across the app
 │   │   ├── types/          # TypeScript type definitions
 │   │   │   └── product.ts
