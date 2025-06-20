@@ -1,0 +1,312 @@
+.filterBarTopSection {
+  display: flex;
+  margin-left: 4%;
+  justify-content: space-between;
+  padding: 0.75% 1.5% 2% 2%;
+  align-items: center;
+  border-bottom: 1px solid rgb(240, 231, 231);
+}
+
+.recomendedHead {
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.recomendedSection:hover .recomededFilterDropdown {
+  display: block;
+}
+
+.recomededFilterDropdown {
+  padding: 0.75rem;
+  height: auto;
+  width: 14.625rem;
+  background: #FFFFFF;
+  position: absolute;
+  display: none;
+  right: 0;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.recomededFilterDropdown .recomendedDropdownItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5625rem;
+  align-items: flex-end;
+  opacity: 0.65;
+}
+
+.recomededFilterDropdown div {
+  margin: 1.125rem 0.125rem;
+}
+
+.recomendedDropdownItems p {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  text-align: right;
+}
+
+.totalProductsCount,
+.recomendedHead {
+  font-size: 1.125rem;
+  color: #252020;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.productsMainSection {
+  margin: 1rem 0.25rem;
+  display: flex;
+  padding: 2%;
+  gap: 1.5625rem;
+}
+
+.productsMainSection hr {
+  margin: 0.875rem 0;
+}
+
+.filterSection {
+  width: 25%;
+  height: 54rem;
+}
+
+.filterItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: auto;
+}
+
+.filterItem img,
+.filterBarTopSection img {
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.filterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  height: auto;
+  margin: 0.75rem 0;
+}
+
+.filterForm input {
+  height: 1.125rem;
+  width: 1.125rem;
+  border: 0.05rem solid #4D4D4D;
+}
+
+.filterCheckboxes {
+  display: flex;
+  align-items: center;
+  gap: 0.6875rem;
+}
+
+.filterForm label {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  color: #252020;
+}
+
+.filterShowTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #BFC8CD;
+  line-height: 1.2rem;
+  text-decoration: underline;
+}
+
+.filterTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterTitle p {
+  text-transform: uppercase;
+  color: #252020;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35rem;
+}
+
+.filterDetails p {
+  color: #252020;
+  font-size: 1.125rem;
+  line-height: 1.35rem;
+  font-weight: 400;
+  margin: 0.75rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.productsAllSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5625rem;
+  width: 100%;
+  padding: 0 1.5%;
+}
+
+.productContainer {
+  width: 100%;
+  height: auto;
+}
+
+.productImage {
+  width: 100%;
+  height: 22.25rem;
+  object-fit: cover;
+}
+
+.productName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35rem;
+  color: #252020;
+  margin: 0.5625rem 0;
+}
+
+.productPrice {
+  margin: 0.5rem 0;
+  color: rgb(4, 43, 4);
+  font-size: 1.125rem;
+  font-family: monospace, sans-serif;
+}
+
+.accountCreationInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.accountCreationInfo p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.05rem;
+  color: #888792;
+}
+
+.accountCreationInfo img {
+  height: 1.5rem;
+  width: 1.5rem;
+  object-fit: contain;
+}
+
+.filterToggle {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+  color: #888792;
+}
+
+/* ... existing styles ... */
+
+.filterToggle {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filterToggleButton {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+  color: #888792;
+}
+
+.filterToggleText {
+  text-decoration: underline;
+}
+
+.recomendedSectionWrapper {
+  position: relative;
+  cursor: pointer;
+  padding-right: 12px;
+}
+
+.recomendedDropdownHeader {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.recomendedDropdownHeaderText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #252020;
+}
+
+.filterTitleBox {
+  height: 26px;
+  width: 26px;
+  border: 1px solid #4D4D4D;
+}
+
+/* Products Responsive Styles */
+@media (max-width: 768px) {
+  .filterBarTopSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 478px) and (max-width: 1024px) {
+  .filterSection {
+    display: none;
+  }
+
+  .productsMainSection {
+    padding: 2%;
+    flex-direction: column;
+  }
+
+  .productsAllSection {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+
+  .productImage {
+    height: 18rem;
+  }
+}
+
+@media only screen and (max-width: 478px) {
+  .filterSection {
+    display: none;
+  }
+
+  .productsMainSection {
+    padding: 2% 1.5% 2% 1%;
+    gap: 1rem;
+  }
+
+  .productsAllSection {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .productImage {
+    height: 14rem;
+  }
+
+  .productName {
+    font-size: 1rem;
+  }
+
+  .accountCreationInfo p {
+    font-size: 0.75rem;
+  }
+
+  .accountCreationInfo img {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}

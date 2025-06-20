@@ -1,0 +1,41 @@
+.titleMainSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem 0;
+  border-bottom: 1px solid rgb(240, 231, 231);
+  padding-bottom: 1.25rem;
+}
+
+.titleHead {
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #252020;
+  line-height: 4.5rem;
+  font-family: 'Simplon Norm', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.titleBody {
+  width: 721px;
+  max-width: 90%;
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: #252020;
+  line-height: 2.5rem;
+  font-family: 'Simplon Norm', sans-serif;
+}
+
+/* Title Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .titleHead {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .titleBody {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+}

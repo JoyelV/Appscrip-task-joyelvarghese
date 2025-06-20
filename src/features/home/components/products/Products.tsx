@@ -1,14 +1,15 @@
-'use client'; 
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import ProductCard from "./ProductCard";
-import { Product } from "@/shared/types/product";
-import { filterData } from "@/stores/filterData";
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import ProductCard from './ProductCard';
+import { Product } from '@/shared/types/product';
+import { filterData } from '@/stores/filterData';
+import styles from './styles/Products.module.css';
 
 const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
-  const [downArrow, setDownArrow] = useState("/icons/down-arrow-logo.png");
-  const [leftArrow, setLeftArrow] = useState("/icons/left-arrow-logo.png");
+  const [downArrow, setDownArrow] = useState('/icons/down-arrow-logo.png');
+  const [leftArrow, setLeftArrow] = useState('/icons/left-arrow-logo.png');
   const [dropdownCategories, setDropdownCategories] = useState<Record<string, boolean>>({});
   const [hideFilters, setHideFilters] = useState(false);
   const filterSection = useRef<HTMLDivElement>(null);
@@ -20,9 +21,9 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
   const showCategoriesHandler = (id: number) => {
     const stringId = id.toString();
     setDownArrow((prev) =>
-      prev === "/icons/down-arrow-logo.png"
-        ? "/icons/up-arrow-logo.png"
-        : "/icons/down-arrow-logo.png"
+      prev === '/icons/down-arrow-logo.png'
+        ? '/icons/up-arrow-logo.png'
+        : '/icons/down-arrow-logo.png'
     );
     setDropdownCategories((prev) => ({
       ...prev,
@@ -32,12 +33,12 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
 
   const hideFilterSection = () => {
     setLeftArrow((prev) =>
-      prev === "/icons/left-arrow-logo.png"
-        ? "/icons/right-arrow-logo.png"
-        : "/icons/left-arrow-logo.png"
+      prev === '/icons/left-arrow-logo.png'
+        ? '/icons/right-arrow-logo.png'
+        : '/icons/left-arrow-logo.png'
     );
     if (filterSection.current) {
-      filterSection.current.style.display = hideFilters ? "none" : "block";
+      filterSection.current.style.display = hideFilters ? 'none' : 'block';
     }
   };
 
@@ -50,9 +51,9 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -62,36 +63,23 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
 
   return (
     <>
-      <main id="filter-bar-top-section">
-        <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-          <p className="total-products-count d-none-mobile">3425 ITEMS</p>
+      <main id="filter-bar-top-section" className={styles.filterBarTopSection}>
+        <div className={styles.filterToggle}>
+          <p className={`${styles.totalProductsCount} d-none-mobile`}>3425 ITEMS</p>
           <div
-            style={{
-              display: "flex",
-              gap: "6px",
-              cursor: "pointer",
-              color: "#888792",
-            }}
             onClick={() => {
               toggleFilter();
               hideFilterSection();
             }}
           >
             <Image src={leftArrow} alt="Arrow Left" width={16} height={16} />
-            <p style={{ textDecoration: "underline" }}>
-              {hideFilters ? "HIDE FILTERS" : "SHOW FILTERS"}
-            </p>
+            <p className={styles.filterToggleText}>{hideFilters ? 'HIDE FILTERS' : 'SHOW FILTERS'}</p>
           </div>
         </div>
         <section
-          className="recomended-section"
-          style={{
-            position: "relative",
-            cursor: "pointer",
-            paddingRight: "12px",
-          }}
+          className={`${styles.recomendedSection}`}
         >
-          <div className="recomended-head">
+          <div className={styles.recomendedHead}>
             <p>RECOMMENDED</p>
             <Image
               src="/icons/down-arrow-logo.png"
@@ -100,33 +88,17 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
               height={16}
             />
           </div>
-          <div className="recomeded-filter-dropdown">
-            <div
-              style={{
-                display: "flex",
-                gap: "5px",
-                alignItems: "center",
-                justifyContent: "flex-end",
-              }}
-            >
+          <div className={styles.recomededFilterDropdown}>
+            <div className={styles.recomendedDropdownHeader}>
               <Image
                 src="/icons/tick-mark-logo.png"
                 alt="Tick Mark"
                 width={26}
                 height={26}
               />
-              <p
-                style={{
-                  fontSize: "18px",
-                  fontWeight: "700",
-                  lineHeight: "40px",
-                  color: "#252020",
-                }}
-              >
-                RECOMMENDED
-              </p>
+              <p className={styles.recomendedDropdownHeaderText}>RECOMMENDED</p>
             </div>
-            <div className="recomended-dropdown-items">
+            <div className={styles.recomendedDropdownItems}>
               <p>newest first</p>
               <p>popular</p>
               <p>price : high to low</p>
@@ -136,19 +108,10 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
         </section>
       </main>
 
-      <main id="products-main-section">
-        <aside id="filter-section" ref={filterSection}>
-          <div
-            className="filter-title"
-            style={{ display: "flex", alignItems: "center", gap: "8px" }}
-          >
-            <div
-              style={{
-                height: "26px",
-                width: "26px",
-                border: "1px solid #4D4D4D",
-              }}
-            ></div>
+      <main id="products-main-section" className={styles.productsMainSection}>
+        <aside id="filter-section" ref={filterSection} className={styles.filterSection}>
+          <div className={styles.filterTitle}>
+            <div className={styles.filterTitleBox}></div>
             <p>CUSTOMIZE</p>
           </div>
           <hr />
@@ -156,8 +119,8 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
             filterData.map((item) => {
               const { id, title } = item;
               return (
-                <div className="filter-item" key={id}>
-                  <div className="filter-title">
+                <div className={styles.filterItem} key={id}>
+                  <div className={styles.filterTitle}>
                     <p>{title}</p>
                     <Image
                       src={downArrow}
@@ -167,23 +130,23 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
                       onClick={() => showCategoriesHandler(id)}
                     />
                   </div>
-                  <div className="filter-details">
+                  <div className={styles.filterDetails}>
                     <p>All</p>
                   </div>
                   {dropdownCategories[id.toString()] && (
-                    <form className="filter-show-form">
-                      <div className="filter-show-title">
+                    <form className={styles.filterForm}>
+                      <div className={styles.filterShowTitle}>
                         <p>Unselect all</p>
                       </div>
-                      <div className="filter-checkboxes">
+                      <div className={styles.filterCheckboxes}>
                         <input type="checkbox" />
                         <label htmlFor="men">Men</label>
                       </div>
-                      <div className="filter-checkboxes">
+                      <div className={styles.filterCheckboxes}>
                         <input type="checkbox" />
                         <label htmlFor="women">Women</label>
                       </div>
-                      <div className="filter-checkboxes">
+                      <div className={styles.filterCheckboxes}>
                         <input type="checkbox" />
                         <label htmlFor="boys&kids">Boys & Kids</label>
                       </div>
@@ -195,7 +158,7 @@ const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
             })}
         </aside>
 
-        <section id="products-all-section">
+        <section id="products-all-section" className={styles.productsAllSection}>
           {initialProducts &&
             initialProducts.map((item) => (
               <ProductCard key={item.id} product={item} />
