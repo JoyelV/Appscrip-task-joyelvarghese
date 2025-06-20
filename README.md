@@ -5,6 +5,7 @@ Welcome to the E-Commerce Product Listing Application, a Next.js-based web appli
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
+- [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -27,6 +28,18 @@ This application fetches product data from a public API and presents it in a gri
 - Dynamic product data fetched from the FakeStore API.
 - Interactive like button on product cards.
 - Styled header with navigation and footer with subscription form.
+
+## Tech Stack
+- **Frontend Framework**: [Next.js 15.3.4](https://nextjs.org) - App Router, SSR, SSG, and CSR support.
+- **Programming Language**: [TypeScript](https://www.typescriptlang.org) - Type-safe development.
+- **Library**: [React](https://reactjs.org) - Component-based UI with hooks.
+- **Styling**: CSS Modules and inline styles - Scoped and global styling.
+- **State Management**: Local state with `useState` and custom stores.
+- **Data Fetching**: Fetch API with [FakeStore API](https://fakestoreapi.com) for mock data.
+- **Assets**: Next.js Image Component for optimized images.
+- **Linting**: [ESLint](https://eslint.org) for code quality.
+- **Build/Deployment**: [Node.js](https://nodejs.org) and [Netlify](https://www.netlify.com).
+- **Version Control**: [Git](https://git-scm.com) with GitHub.
 
 ## Prerequisites
 - Node.js (v14.x or later)
