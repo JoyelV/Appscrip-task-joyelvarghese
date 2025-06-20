@@ -1,25 +1,16 @@
-"use client";
+'use client'; 
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import ProductCard from "./ProductCard";
-import { Product, ApiProduct } from "@/shared/types/product";
+import { Product } from "@/shared/types/product";
 import { filterData } from "@/stores/filterData";
 
-const transformApiProduct = (item: ApiProduct): Product => ({
-  ...item,
-  inStock: true,
-});
-
-const Products = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+const Products = ({ initialProducts }: { initialProducts: Product[] }) => {
   const [downArrow, setDownArrow] = useState("/icons/down-arrow-logo.png");
   const [leftArrow, setLeftArrow] = useState("/icons/left-arrow-logo.png");
-  const [dropdownCategories, setDropdownCategories] = useState<
-    Record<string, boolean>
-  >({});
+  const [dropdownCategories, setDropdownCategories] = useState<Record<string, boolean>>({});
   const [hideFilters, setHideFilters] = useState(false);
-  const [loading, setLoading] = useState(false);
   const filterSection = useRef<HTMLDivElement>(null);
 
   const toggleFilter = () => {
@@ -50,25 +41,6 @@ const Products = () => {
     }
   };
 
-  const getProducts = async () => {
-    const URL = "https://fakestoreapi.com/products";
-    try {
-      setLoading(true);
-      const response = await fetch(URL);
-      const data = await response.json();
-      const productsWithStock = data.map(transformApiProduct);
-      setProducts(productsWithStock);
-      setLoading(false);
-    } catch (error) {
-      if (error instanceof Error) {
-        alert(`Internal Server Error: ${error.message}`);
-      } else {
-        alert(`Unexpected error: ${error}`);
-      }
-      setLoading(false);
-    }
-  };
-
   const handleResize = () => {
     if (window.innerWidth <= 768) {
       setHideFilters(true);
@@ -78,7 +50,6 @@ const Products = () => {
   };
 
   useEffect(() => {
-    getProducts();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -88,21 +59,6 @@ const Products = () => {
   useEffect(() => {
     handleResize();
   }, []);
-
-  if (loading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "80vh",
-        }}
-      >
-        <div className="spinner"></div>
-      </div>
-    );
-  }
 
   return (
     <>
@@ -123,7 +79,7 @@ const Products = () => {
           >
             <Image src={leftArrow} alt="Arrow Left" width={16} height={16} />
             <p style={{ textDecoration: "underline" }}>
-              {hideFilters ? "SHOW FILTERS" : "HIDE FILTERS"}
+              {hideFilters ? "HIDE FILTERS" : "SHOW FILTERS"}
             </p>
           </div>
         </div>
@@ -240,8 +196,8 @@ const Products = () => {
         </aside>
 
         <section id="products-all-section">
-          {products &&
-            products.map((item) => (
+          {initialProducts &&
+            initialProducts.map((item) => (
               <ProductCard key={item.id} product={item} />
             ))}
         </section>
