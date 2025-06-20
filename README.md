@@ -60,19 +60,44 @@ This application fetches product data from a public API and presents it in a gri
 ## Project Structure
 ```
 e-commerce-product-listing/
-├── public/
-│   └── icons/              # Static image assets (e.g., down-arrow-logo.png)
-├── src/
-│   ├── app/               # Next.js pages (e.g., page.tsx)
-│   ├── features/          # Feature-specific components (e.g., Products, ProductCard)
-│   ├── shared/            # Shared types and utilities (e.g., product.ts)
-│   ├── stores/            # Data stores (e.g., filterData.ts)
-│   └── styles/            # Global styles (e.g., globals.css)
-├── .eslintrc              # ESLint configuration
-├── .gitignore             # Git ignore file
-├── package.json           # Project dependencies and scripts
-├── README.md              # This file
-└── tsconfig.json          # TypeScript configuration
+├── public/                 # Static assets served by Next.js
+│   ├── icons/              # Icons for UI elements
+│   └── images/             # Images for branding or payment methods
+├── src/                    # Source code directory
+│   ├── app/                # App Router pages and layouts
+│   │   ├── layout.tsx      # Root layout with metadata and structure
+│   │   ├── page.tsx        # Home page with server-side data fetching
+│   ├── features/           # Feature-specific modules
+│   │   ├── home/           # Home page features
+│   │   │   ├── components/ # Reusable components for home page
+│   │   │   │   ├── header/ # Header-related components
+│   │   │   │   │   └── Header.tsx
+│   │   │   │   ├── products/ # Product-related components
+│   │   │   │   │   ├── ProductCard.tsx
+│   │   │   │   │   └── Products.tsx
+│   │   │   │   ├── footer/ # Footer-related components
+│   │   │   │   │   └── Footer.tsx
+│   │   │   │   └── title/  # Title-related components
+│   │   │   │       └── Title.tsx
+│   ├── shared/             # Shared resources across the app
+│   │   ├── types/          # TypeScript type definitions
+│   │   │   └── product.ts
+│   │   ├── utils/          # Utility functions
+│   │   │   └── api.ts
+│   ├── stores/             # State management or data stores
+│   │   ├── filters/        # Filter-related data
+│   │   │   └── filterData.ts
+│   └── styles/             # Global and shared styles
+│       └── globals.css     # Moved and renamed from # globals.css
+├── .eslintrc.json          # ESLint configuration (updated to JSON)
+├── .gitignore              # Git ignore file
+├── eslint.config.mjs       # ESLint configuration file (modern JS)
+├── next-env.d.ts           # TypeScript environment declarations for Next.js
+├── next.config.ts          # Next.js configuration file
+├── package.json            # Project dependencies and scripts
+├── package-lock.json       # Locked dependency versions
+├── README.md               # Project documentation
+└── tsconfig.json           # TypeScript configuration
 ```
 
 ## API Integration
